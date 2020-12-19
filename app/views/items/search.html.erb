@@ -1,0 +1,38 @@
+<div class="mainCont">
+
+<h2>Search Results:</h2>
+
+<% if @items.length == 0  %>
+<br />
+<h2>No products were found to match your search</h2>
+<% end %>
+
+
+
+  <% @items.each do |item| %>
+    <div class="itemhols">
+
+      <h1><%= item.title %></h1>
+
+        <%= link_to (image_tag item.image_url, :class => "itemholsIm"), item %>
+        
+        <p><%= item.author %></p>
+        
+        <p><%= item.description %></p>
+        
+        <p>Department: <%= item.department %>
+
+        <br>
+
+        Price <%= number_to_currency(item.price, :unit => "€") %></p>
+        
+          
+        <% if user_signed_in? %>
+            <a href="/cart/<%= item.id %>" class = "button">Add to Cart</a>
+            <%= link_to 'Edit',  edit_item_path(item), :class => "button", :role => "button" %>
+            <%= link_to 'Destroy',  item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button", :role => "button" %>
+        <%end%>  
+    </div>    
+  <% end %>
+
+</div>

@@ -1,0 +1,29 @@
+<% provide(:title, "Home Page") %>
+
+<div class="mainCont">
+<h1>Home</h1>
+
+<%= image_tag("homebook.jpg", alt: "Welcome Logo", :class => "welcomeIm") %>    
+
+
+
+
+<p>Welcome to the BoookClub, take a look around...</p>
+
+</br></br>
+
+<h1>Departments</h1>
+
+ <% @departments.each do |department| %>
+ 
+<div class="itemhols">
+   
+      <tr>
+        <a href="/department/<%= department.title %>"><img src="/assets/<%= department.image %>" alt="<%= department.title %>" class="homeIm"></a>
+        <h1><%= department.title %></h1>
+        <p><%= department.descrition %></p>
+        
+</div>
+<% end %>
+
+</div>

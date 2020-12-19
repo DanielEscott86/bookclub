@@ -1,0 +1,10 @@
+<% provide(:title, "New Item") %>
+
+
+<h1>New Item</h1>
+
+<%= render 'form', item: @item, :class => "button", :role => "button" %>
+
+<%= link_to 'Back', items_path, :class => "button", :role => "button" %>
+
+

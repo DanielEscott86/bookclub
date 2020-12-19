@@ -1,0 +1,33 @@
+<header class="headSec">
+
+      <h1>Book Club</h1>
+
+        <ul id = "nav">
+  
+          <li><%= link_to "Home",  "/" %></li>
+          
+          <li><%= link_to "Books", "/books" %></li>
+  
+          <li><%= link_to "About", "/about" %></li>
+          
+          <li><%= link_to "Contact", "/contact" %></li>
+          
+          <li><%= link_to "Admin", "/admin" %></li>
+          
+          
+          <% if user_signed_in? %>
+                 <li><a href="/orders" >Profile</a></li>
+                 <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+                 <li><%= link_to 'Register', new_user_registration_path %></li> 
+                 <li><%= link_to 'Sign in', new_user_session_path %></li>
+          <% end %>
+          
+          <% if session[:cart] %>
+                <li><a href="/cart" >Cart <%= session[:dansession] %></a></li>
+          <% else %>
+                <li><%= link_to "Cart", "/cart" %></li>
+          <% end %>
+        </ul>
+
+</header>

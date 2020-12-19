@@ -1,0 +1,65 @@
+<div class="mainCont">
+<% if @order.user.email == current_user.email || current_user.admin? %>
+  
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order date:</strong>
+  <%= @order.order_date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user.email %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<%= link_to 'Back', orders_path, :class => "button", :role => "button"%>
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_order_path(@order), :class => "button", :role => "button" %> 
+<% end %>
+
+<table id="customers">
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Item Total</th>
+        </tr>
+        
+        <% total = 0 %>
+        <% @orderitems.each do |id, quantity| %>
+        <% item = Orderitem.find_by_id(id) %>
+        
+        <tr>
+         <td class="title">  <%= item.title %>  </td>   
+         <td class="title">  <%= number_to_currency(item.price, :unit => "€") %>  </td>
+         <td class="title">  <%= item.quantity %>  </td>
+         <td class="title">  <%= number_to_currency(item.quantity * item.price, :unit =>"€") %> </td>
+        </tr>
+        
+        
+        <% total += item.quantity * item.price %>
+        <% end %>
+        
+        
+        <tr>
+          <td>Order Total: <%= number_to_currency(total, :unit => "€") %>  </td>
+        </tr>
+        
+        <% shipping = 12 %>
+        <% @overalltotal = shipping + total %>
+        
+        <tr>
+            <td>Shipping is €12</td>
+            <td>You owe: €<%= @overalltotal %></td>
+        </tr>
+  </table>
+  <% else %>
+  <h1>Incorrect Order Number</h1>
+  <% end %>
+</div>

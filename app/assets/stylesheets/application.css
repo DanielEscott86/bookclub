@@ -1,0 +1,250 @@
+.headSec {
+    min-height:10px;
+    background-color: #337096;
+    width: 100%;
+    margin-bottom:10px;
+    overflow: auto;
+    background: url("/assets/site/booklib.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+}
+
+.headSec h1 {
+    color: #ffffff;
+    font-size: 80px;
+    padding: 15px;
+    
+}
+
+h1{
+    color: #337096;
+    font-size: 25;
+    padding: 15px;
+    
+}
+
+ul { 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #337096;    
+    
+}
+
+li {float:left;}
+
+li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+    
+}
+
+#nav {
+width:100%;
+margin:0 auto;
+list-style:none;
+overflow: hidden;
+background-color: #337096;
+}
+
+#nav li {
+float:left;
+}
+
+#nav a {
+color: #ffffff;
+display:block;
+text-align:center;
+width:158px;
+text-decoration:none; 
+}
+
+
+.mainCont { 
+    
+    margin: auto;
+    width:90%;
+    border: 3px solid #337096;
+    padding: 10px;
+    text-align: center;
+    color: #337096;
+}
+
+.mainCont p {
+   display: block;
+    color: #337096;
+    text-align: center;
+    padding: 2px 3px;
+    text-decoration: none;
+    font-size: 16px
+}
+
+.welcomeIm {width: 20%;}
+
+
+.foot {
+    text-align: center;
+    min-height: 50px;
+    background-color: #337096;
+    width: 100%;
+    margin-top: 5px;
+    overflow: auto;
+}
+
+.foot h1 {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 15px;
+    
+}
+
+.container {
+      background: url("/assets/site/conbook.png");
+      background-repeat:no-repeat;
+      background-position:bottom;
+      width: 100%;
+      min-height: 800px;
+}
+
+
+
+
+
+#itemsContainer {
+    width: 100%;
+    text-align: center;
+    
+    
+}
+
+
+#itemsContainer h1 {
+   display: block;
+    color: #337096;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    
+    
+}
+
+
+.itemhols {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    display: inline-block;
+    width: 25%;
+    padding:2px;
+    min-height: 200px;
+   
+}
+
+
+.itemhols h1 {
+   display: block;
+    color: #337096;
+    text-align: center;
+    padding: 2px 3px;
+    text-decoration: none;
+    font-size: 20px
+    
+}
+
+
+.itemhols p {
+   display: block;
+    color: #337096;
+    text-align: center;
+    padding: 2px 3px;
+    text-decoration: none;
+    font-size: 16px
+    
+}
+
+
+
+.itemholsIm {
+    width: 80px;
+    height: 80px;
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block;
+    
+}
+
+.homeIm{
+    width: 120px;
+    height: 120px;
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block;
+}
+
+.button {
+    background-color: #337096;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+input[type=submit] {
+    width: 100%;
+    background-color: #337096;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+#customers {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #ddd;}
+
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #337096;
+    color: white;
+}

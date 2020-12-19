@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title)%> | We Love Books</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      
+      
+      <%= render '/layouts/header' %>
+      <%=render 'layouts/search'%>
+  
+        <div class="container">
+  
+          <%= yield %>
+  
+        </div>
+  
+    <footer class="foot">
+  
+      <h1>© Copyright 2020, All Rights Reserved</h1>
+  
+    </footer>
+  </body>
+</html>

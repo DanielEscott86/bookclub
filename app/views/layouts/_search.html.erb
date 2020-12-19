@@ -1,0 +1,9 @@
+<div class="mainCont">
+    
+    <%= form_tag("/search", :method => "post") do %>
+    <%= label_tag(:search_term, "Search:") %>
+    <%= text_field_tag(:search_term) %>
+    <%= submit_tag("Search") %>
+<% end %>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="mainCont">
+<p id="notice"><%= notice %></p>
+<h1>My Details</h1>
+    <div class="itemhols">
+    <p>Id <%= current_user.id %></p>
+    <p>Email <%= current_user.email %></p>
+    <% if current_user.admin %>
+    <p>Role: Administrator</p>
+    <% else %>
+    <p>Role: Normal User</p>
+    <% end %>
+    </div>
+    
+<h1>Orders</h1>
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>Order date</th>
+      <th>User</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.limit(1).order(id: :desc).each do |order| %>
+      <tr>
+        <td><%= order.order_date %></td>
+        <td><%= order.user.email %></td>
+        <td><%= order.status %></td>
+        <td><%= link_to 'Show', order, :class => "button", :role => "button" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>

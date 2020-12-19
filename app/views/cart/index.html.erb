@@ -1,0 +1,59 @@
+<% if @cart.empty? %>
+
+<h1>No books in cart yet, how about one of our language books?</h1>
+
+<% end %>
+
+<div class="mainCont">
+    
+    <table id="customers">
+        
+        <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Less</th>
+            <th>More</th>
+            <th>Remove</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Item Total</th>
+        </tr>
+        
+        <% total = 0 %>
+        <% totalq = 0 %>
+        <% @cart.each do |id, quantity| %>
+            <% item = Item.find_by_id(id) %>
+        <tr>
+            
+            <td class="title">  <%= link_to (image_tag item.image_url, :style =>"width:5%"), item %>  </td>
+            <td class="title">  <%= link_to item.title, item %>  </td>
+            <td class="title"><a href="/decrease/<%= item.id %>">Less</a></td>
+            <td class="title"><a href="/increase/<%= item.id %>">More</a></td>
+            <td><a href="/remove/<%= item.id %>">Remove From Cart</a></td>
+            <td class="title">  <%= number_to_currency(item.price, :unit => "€") %>  </td>
+            <td class="title">  <%= quantity %> </td>
+            <td class="title">  <%= number_to_currency(quantity * item.price, :unit =>"€") %> </td>
+        </tr>
+        
+        <% total += quantity * item.price %>
+        <% totalq += quantity %>
+        
+        <% session[:dansession] = number_to_currency(total, :unit =>"€"), totalq %>
+        
+        <% end %>
+        
+        <tr>
+            
+            <td class="title">Cart Total <%= number_to_currency(total, :unit =>"€") %> </td>
+            
+        </tr>
+
+    </table>
+    
+    <p>
+        <a href="/items" class="button">Continue Shopping</a>
+        <a href="/clearcart" class="button">Clear Cart</a>
+        <a href="/checkout" class="button">Confirm Order</a>
+    </p>
+    
+</div>
